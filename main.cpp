@@ -8,5 +8,6 @@ int main(){
     << "A - B = " << a - b << '\n'
     << "A * B = " << a * b << '\n'
     << "A / B = " << a / b << '\n'
-    << "max(A, B) = " << max(a, b) << '\n';
+    << "max(A, B) = " << max(a, b) << '\n'
+    << "min(A, B) = " << min(a, b) << '\n';
 }
