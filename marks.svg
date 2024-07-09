@@ -1,3 +1,3 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <svg width='400' height='300' viewBox='0 0 400 300' xmlns='http://www.w3.org/2000/svg'>
-<text x='20' y='20'>2</text><rect x='50' y='0' width='60' height='30' stroke='#5C7BCC' fill='#5C7BCC'/><line x1='60' x2='60' y1='0' y2='30' stroke='black' stroke-width='1'/><text x='20' y='50'>5</text><rect x='50' y='30' width='150' height='30' stroke='#982989' fill='#982989'/><line x1='150' x2='150' y1='30' y2='60' stroke='black' stroke-width='1'/><text x='20' y='80'>3</text><rect x='50' y='60' width='90' height='30' stroke='#A554C8' fill='#A554C8'/><line x1='90' x2='90' y1='60' y2='90' stroke='black' stroke-width='1'/></svg>
+<text x='20' y='20'>2</text><rect x='50' y='0' width='60' height='30' stroke='#5B71ED' fill='#5B71ED'/><text x='20' y='50'>5</text><rect x='50' y='30' width='150' height='30' stroke='#49B7FC' fill='#49B7FC'/><text x='20' y='80'>3</text><rect x='50' y='60' width='90' height='30' stroke='#2F127D' fill='#2F127D'/></svg>
