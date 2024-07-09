@@ -13,13 +13,12 @@ const auto TEXT_WIDTH = 50;
 const auto BIN_HEIGHT = 30;
 const auto BLOCK_WIDTH = 10;
 
-void
-svg_text(double left, double baseline, string text) {
-    cout << "<text x='" << left << "' y='" <<baseline <<"'>"<<  text<<"</text>";
+void svg_text(double baseline, string text) {
+    cout << "<text x='" << TEXT_LEFT << "' y='" <<baseline <<"'>"<<  text<<"</text>";
 }
 
-void svg_rect(double x, double y, double width, double height, string color){
-    cout << "<rect x='"<< x <<"' y='"<< y <<"' width='"<< width <<"' height='"<<height 
+void svg_rect(double y, double width, string color){
+    cout << "<rect x='"<< TEXT_WIDTH <<"' y='"<< y <<"' width='"<< width <<"' height='"<< BIN_HEIGHT 
     <<"' stroke='"<< color <<"' fill='"<< color <<"'/>";
 }
 
@@ -36,19 +35,34 @@ void svg_end() {
     cout << "</svg>\n";
 }
 
-void show_histogram_svg(const vector<int> &diagram) {
+void show_histogram_svg(const vector<int> &diagram, int BlockWidth) {
     double top = 0;
     double bin_width;
     svg_begin(400, 300);
     for(auto i : diagram){
-        bin_width = BLOCK_WIDTH * i;
-        svg_text(TEXT_LEFT, top + TEXT_BASELINE, to_string(i));
-        svg_rect(TEXT_WIDTH, top, bin_width, BIN_HEIGHT, "red");
+        bin_width = BlockWidth * i;
+        svg_text(top + TEXT_BASELINE, to_string(i));
+        svg_rect(top, bin_width, "red");
         top += BIN_HEIGHT;
     }
     svg_end();
 }
 
+int BlockWidthRead(){
+    int width;
+    cerr << "Enter Width:";
+    cin >> width;
+    if(width > 30){
+        cerr << "Error\nWidth > 30px";
+        return BlockWidthRead();
+    }
+    if(width < 3){
+        cerr << "Error!!!\nWidth < 3px";
+        return BlockWidthRead(); 
+    }
+    return width;
+    
+}
 
 template<class T>
 void Read(int size, T &mas){
@@ -68,6 +82,7 @@ void Scaling (vector<int> &mas){
 int main(){
     int len, count_pos; 
     double size_inter;
+    int BlockWidth;
 
     cerr << "Enter number count:";
     cin >> len;
@@ -97,5 +112,6 @@ int main(){
         }
         
     }
-    show_histogram_svg(diagram);
+    BlockWidth = BlockWidthRead();
+    show_histogram_svg(diagram, BlockWidth);
 }
