@@ -21,6 +21,7 @@ void svg_text(double baseline, string text) {
 void svg_rect(double y, double width, string color){
     cout << "<rect x='"<< TEXT_WIDTH <<"' y='"<< y <<"' width='"<< width <<"' height='"<< BIN_HEIGHT 
     <<"' stroke='"<< color <<"' fill='"<< color <<"'/>";
+    cout << "<line x1='"<< width <<"' x2='"<< width <<"' y1='"<< y <<"' y2='"<<y + BIN_HEIGHT<<"' stroke='black' stroke-width='1'/>";
 }
 
 void svg_begin(double width, double height) {
