@@ -1,6 +1,7 @@
 #include<iostream>
 #include<vector>
 #include<string>
+#include <cstdlib>
 #include<algorithm>
 using namespace std;
 
@@ -35,14 +36,50 @@ void svg_end() {
     cout << "</svg>\n";
 }
 
+string RandColor(){
+    string color ="#";
+    //srand(time(nullptr)); 
+    int tek;
+    for(int i = 0; i<6; i++){
+        tek = rand() / ((RAND_MAX + 1u) / 16); 
+        switch (tek)
+        {
+        case 10:
+            color.push_back('A');
+            break;
+        case 11:
+            color.push_back('B');
+            break;
+        case 12:
+            color.push_back('C');
+            break;
+        case 13:
+            color.push_back('D');
+            break;
+        case 14:
+            color.push_back('E');
+            break;
+        case 15:
+            color.push_back('F');
+            break;
+        
+        default:
+            color.append(to_string(tek));
+            break;
+        }
+    }
+    return color;
+}
+
 void show_histogram_svg(const vector<int> &diagram, int BlockWidth) {
     double top = 0;
     double bin_width;
-    svg_begin(400, 300);
+    srand(time(nullptr));
+    svg_begin(IMAGE_WIDTH, IMAGE_HEIGHT);
     for(auto i : diagram){
         bin_width = BlockWidth * i;
         svg_text(top + TEXT_BASELINE, to_string(i));
-        svg_rect(top, bin_width, "red");
+        svg_rect(top, bin_width, RandColor());
         top += BIN_HEIGHT;
     }
     svg_end();
