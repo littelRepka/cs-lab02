@@ -15,29 +15,6 @@ const auto TEXT_WIDTH = 50;
 const auto BIN_HEIGHT = 30;
 const auto BLOCK_WIDTH = 10;
 
-void svg_text(double baseline, string text) {
-    cout << "<text x='" << TEXT_LEFT << "' y='" <<baseline <<"'>"<<  text<<"</text>";
-}
-
-void svg_rect(double y, double width, string color){
-    cout << "<rect x='"<< TEXT_WIDTH <<"' y='"<< y <<"' width='"<< width <<"' height='"<< BIN_HEIGHT 
-    <<"' stroke='"<< color <<"' fill='"<< color <<"'/>";
-    //cout << "<line x1='"<< width <<"' x2='"<< width <<"' y1='"<< y <<"' y2='"<<y + BIN_HEIGHT<<"' stroke='black' stroke-width='1'/>";
-}
-
-
-void svg_begin(double width, double height) {
-    cout << "<?xml version='1.0' encoding='UTF-8'?>\n";
-    cout << "<svg ";
-    cout << "width='" << width << "' ";
-    cout << "height='" << height << "' ";
-    cout << "viewBox='0 0 " << width << " " << height << "' ";
-    cout << "xmlns='http://www.w3.org/2000/svg'>\n";
-}
-
-void svg_end() {
-    cout << "</svg>\n";
-}
 
 string RandColor(){
     string color ="#";
