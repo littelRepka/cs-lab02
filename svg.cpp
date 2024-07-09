@@ -2,6 +2,7 @@
 #include<vector>
 #include<string>
 #include <cstdlib>
+#include"histogram.h"
 #include<algorithm>
 using namespace std;
 
@@ -23,6 +24,7 @@ void svg_rect(double y, double width, string color){
     <<"' stroke='"<< color <<"' fill='"<< color <<"'/>";
     //cout << "<line x1='"<< width <<"' x2='"<< width <<"' y1='"<< y <<"' y2='"<<y + BIN_HEIGHT<<"' stroke='black' stroke-width='1'/>";
 }
+
 
 void svg_begin(double width, double height) {
     cout << "<?xml version='1.0' encoding='UTF-8'?>\n";
